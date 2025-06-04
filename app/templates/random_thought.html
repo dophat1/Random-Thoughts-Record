@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Random Thought</h1>
+    {% if thought %}
+        <div class="thought">
+            <p>{{ thought.content }}</p>
+            <small>
+                {{ thought.timestamp.strftime('%Y-%m-%d %H:%M') }}
+                {% if thought.mood %} | Mood: {{ thought.mood }}{% endif %}
+                {% if thought.category %} | Category: {{ thought.category }}{% endif %}
+            </small>
+        </div>
+        <a href="{{ url_for('main.random_thought') }}">Show Another Random Thought</a>
+    {% else %}
+        <p>No thoughts found in the database.</p>
+    {% endif %}
+{% endblock %}

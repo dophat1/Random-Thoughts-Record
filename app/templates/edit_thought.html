@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Edit Thought</h1>
+    <form method="POST">
+        <div>
+            <label for="content">Thought:</label>
+            <textarea name="content" id="content" required>{{ thought.content }}</textarea>
+        </div>
+        <div>
+            <label for="mood">Mood:</label>
+            <input type="text" name="mood" id="mood" value="{{ thought.mood or '' }}">
+        </div>
+        <div>
+            <label for="category">Category:</label>
+            <input type="text" name="category" id="category" value="{{ thought.category or '' }}">
+        </div>
+        <button type="submit">Update Thought</button>
+    </form>
+{% endblock %}

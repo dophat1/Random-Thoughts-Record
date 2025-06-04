@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Add a New Thought</h1>
+    <form method="POST">
+        <div>
+            <label for="content">Thought:</label>
+            <textarea name="content" id="content" required autofocus ></textarea>
+        </div>
+        <div>
+            <label for="mood">Mood (optional):</label>
+            <input type="text" name="mood" id="mood" autocomplete="off">
+        </div>
+        <div>
+            <label for="category">Category (optional):</label>
+            <input type="text" name="category" id="category" autocomplete="off">
+        </div>
+        <button type="submit">Save!</button>
+    </form>
+{% endblock %} 
